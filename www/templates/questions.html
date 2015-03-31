@@ -1,0 +1,78 @@
+<ion-view view-title="Questions">
+    <br>
+    <br>
+    <ion-tabs class="tabs-positive tabs-icon-only">
+        <ion-tab title="Home" icon-on="ion-ios-home" icon-off="ion-ios-home-outline">
+            <ion-content scroll="true">
+                <!-- Tab 1 content -->
+            </ion-content>
+        </ion-tab>
+        <ion-tab title="About" icon-on="ion-ios-clock" icon-off="ion-ios-gear-outline">
+            <ion-content scroll="true">
+                <!-- Tab 2 content -->
+            </ion-content>
+        </ion-tab>
+        <ion-tab title="Settings" a icon-on="ion-ios-gear" icon-off="ion-ios-gear-outline">
+            <ion-content>
+                <br>
+                <br>
+                <div class="card">
+                    <div class="item item-text-wrap">
+                    <div class="item item-divider">
+                            General Mood for Today
+                        </div>
+                        <div class="item range range-positive">
+                            <i class="icon ion-ios7-sunny-outline"></i>
+                            <span class="input-label">Rate your day from 1 to 10</span>
+                            <input type="range" name="volume" min="0" max="10" value="1">
+                            <i class="icon ion-ios7-sunny"></i>
+                        </div>
+                        <div class="item item-divider">
+                            Did you have thoughts of harming yourself or others?
+                        </div>
+                        <label class="item item-radio">
+                            <input type="radio" name="group">
+                            <div class="item-content">
+                                Yes
+                            </div>
+                            <i class="radio-icon ion-checkmark"></i>
+                        </label>
+                        <label class="item item-radio">
+                            <input type="radio" name="group">
+                            <div class="item-content">
+                                No
+                            </div>
+                            <i class="radio-icon ion-checkmark"></i>
+                        </label>
+                        <div class="item item-divider">
+                            Pick your general mood for the day
+                        </div>
+                        <ion-checkbox ng-repeat="item in moods">
+                            {{item.text}}
+                            </ion-radio>
+                    </div>
+                    <div class="item item-divider">
+                        Notes for the day:
+                    </div>
+                    <div>
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Good things that happened</span>
+                            <input type="text" placeholder="I found a quarter!">
+                        </label>
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Bad things that happened</span>
+                            <input type="text" placeholder="I broke a mug.">
+                        </label>
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Things I accomplished</span>
+                            <input type="text" placeholder="I cleaned up my desk!">
+                        </label>
+                    </div>
+            </ion-content>
+        </ion-tab>
+
+        <ion-content scroll="true">
+        </ion-content>
+        </ion-tab>
+    </ion-tabs>
+</ion-view>
