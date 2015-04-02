@@ -1,22 +1,51 @@
 angular.module('starter.controllers', [])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
-// for moods
- $scope.moods = [
-    { text: "Happy", icon: "ion-happy"},
-    { text: "Sad"},
-    { text: "Excited"},
-    { text: "Nervous"},
-    { text: "Confident"},
-    { text: "Restless"},
-    { text: "Irritable"},
-    { text: "Lightheaded"},
-    { text: "Content"},
-    { text: "Easygoing"},
-    { text: "Neutral"}
-  ];
 
+    // for moods
+    $scope.moods = [{
+        text: "Happy",
+        icon: "ion-happy"
+    }, {
+        text: "Sad"
+    }, {
+        text: "Excited"
+    }, {
+        text: "Nervous"
+    }, {
+        text: "Confident"
+    }, {
+        text: "Restless"
+    }, {
+        text: "Irritable"
+    }, {
+        text: "Lightheaded"
+    }, {
+        text: "Content"
+    }, {
+        text: "Easygoing"
+    }, {
+        text: "Neutral"
+    }];
 
+    $scope.contact1 = [{
+            label: "First Name"
+        }, {
+            label: "Last Name"
+        }, {
+            label: "Phone number"
+        }, {
+            label: "Email"
+        }, {
+            info: "Nancy"
+        }, {
+            info: "Minyanou"
+        }, {
+            info: "1800-666-8888"
+        }, {
+            info: "nancy@gmail.com"
+        }
+    ];
     // Form data for the login modal
     $scope.loginData = {};
 

@@ -4,49 +4,56 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers'])
+angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
 
 .run(function($ionicPlatform) {
-  $ionicPlatform.ready(function() {
-    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    // for form inputs)
-    if (window.cordova && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-    }
-    if (window.StatusBar) {
-      // org.apache.cordova.statusbar required
-      StatusBar.styleDefault();
-    }
-  });
+    $ionicPlatform.ready(function() {
+        // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+        // for form inputs)
+        if (window.cordova && window.cordova.plugins.Keyboard) {
+            cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+        }
+        if (window.StatusBar) {
+            // org.apache.cordova.statusbar required
+            StatusBar.styleDefault();
+        }
+    });
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
-  $stateProvider
+    $stateProvider
 
-  .state('app', {
-    url: "/app",
-    abstract: true,
-    templateUrl: "templates/menu.html",
-    controller: 'AppCtrl'
-  })
+        .state('app', {
+        url: "/app",
+        abstract: true,
+        templateUrl: "templates/menu.html",
+        controller: 'AppCtrl'
+    })
 
-  .state('app.questions', {
-    url: "/questions",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/questions.html"
-      }
-    }
-  })
-.state('app.contacts', {
-    url: "/contacts",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/contacts.html"
-      }
-    }
-  })
-  ;
-  // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/questions');
+    .state('app.questions', {
+            url: "/questions",
+            views: {
+                'menuContent': {
+                    templateUrl: "templates/questions.html"
+                }
+            }
+        })
+        .state('app.contacts', {
+            url: "/contacts",
+            views: {
+                'menuContent': {
+                    templateUrl: "templates/contacts.html"
+                }
+            }
+        })
+        .state('app.changeContact', {
+            url: "/changeContact",
+            views: {
+                'menuContent': {
+                    templateUrl: "templates/changeContact.html"
+                }
+            }
+        });
+    // if none of the above states are matched, use this as the fallback
+    $urlRouterProvider.otherwise('/app/questions');
 });
