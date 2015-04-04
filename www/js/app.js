@@ -57,4 +57,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ui.cale
         });
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/app/questions');
-});
+})
+
+.config(['$ionicConfigProvider', function($ionicConfigProvider) {
+
+    $ionicConfigProvider.tabs.position('bottom'); //other values: top
+
+}]);

@@ -137,7 +137,30 @@ angular.module('starter.controllers', [])
     $scope.showAlert = function() {
         var alertPopup = $ionicPopup.alert({
             title: 'Submission',
-            template: 'Your mood log for today have been recorded!'
+            template: 'Your mood log has been recorded!'
+        });
+
+    };
+})
+
+.controller('PopupCtrlContacts', function($scope, $ionicPopup, $timeout) {
+
+    // Triggered on a button click, or some other target
+    $scope.showPopup = function() {
+        $scope.data = {}
+
+
+        $timeout(function() {
+            myPopup.close(); //close the popup after 3 seconds for some reason
+        }, 3000);
+    };
+
+
+    // An alert dialog
+    $scope.showAlert = function() {
+        var alertPopup = $ionicPopup.alert({
+            title: 'Submission',
+            template: 'Your contacts have been updated!'
         });
 
     };
