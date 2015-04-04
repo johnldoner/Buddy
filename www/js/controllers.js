@@ -1,40 +1,27 @@
 angular.module('starter.controllers', [])
 
-.controller('CalenderCtrl', function($scope) {
-    $scope.eventSources = [];
+.controller('CalenderCtrl', function($scope, $compile, uiCalendarConfig) {
     /* config object */
-    $scope.uiConfig = {
-        calendar: {
-            height: 450,
-            editable: true,
+
+    $(function() {
+        var date = new Date();
+        var d = date.getDate();
+        var m = date.getMonth();
+        var y = date.getFullYear();
+
+        $('#calendar').fullCalendar({
             header: {
-                left: 'month basicWeek basicDay agendaWeek agendaDay',
+                left: 'prev,next today',
                 center: 'title',
-                right: 'today prev,next'
+                right: 'month,agendaWeek,agendaDay'
             },
-            dayClick: $scope.alertEventOnClick,
-            eventDrop: $scope.alertOnDrop,
-            eventResize: $scope.alertOnResize
-        }
-    };
+            editable: true
+        })
+    });
 })
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
-    $scope.eventSources = [];
-    $scope.uiConfig = {
-        calendar: {
-            height: 450,
-            editable: true,
-            header: {
-                left: 'month basicWeek basicDay agendaWeek agendaDay',
-                center: 'title',
-                right: 'today prev,next'
-            },
-            dayClick: $scope.alertEventOnClick,
-            eventDrop: $scope.alertOnDrop,
-            eventResize: $scope.alertOnResize
-        }
-    };
+
     // for moods
     $scope.moods = [{
         text: "Happy",

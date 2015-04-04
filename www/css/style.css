@@ -1,1 +1,13 @@
 /* Empty. Add your own CSS if you like */
+/*** Docs ***/
+body {
+	margin-top: 40px;
+	text-align: center;
+	font-size: 14px;
+	font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+}
+
+#calendar {
+	width: 100%;
+	margin: 0 auto;
+}
