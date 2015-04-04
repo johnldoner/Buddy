@@ -3,14 +3,15 @@
     <br>
     <ion-tabs class="tabs-positive tabs-icon-top">
         <ion-tab title="Calender" icon-on="ion-calendar" icon-off="ion-calendar">
-            <ion-content scroll="true">
+            <ion-content scroll="true" ng-app="CalenderCtrl">
+              <div ui-calendar="uiConfig.calendar" ng-model="eventSources">
             </ion-content>
         </ion-tab>
         <ion-tab title="Agenda View" icon-on="ion-grid" icon-off="ion-grid">
             <ion-content scroll="true">
             </ion-content>
         </ion-tab>
-        <ion-tab title="Settings" a icon-on="ion-checkmark" icon-off="ion-checkmark">
+        <ion-tab title="Add New Entry" a icon-on="ion-checkmark" icon-off="ion-checkmark">
             <ion-content scroll="true">
                 <br>
                 <br>
@@ -28,7 +29,7 @@
                         <div class="item item-divider">
                             Did you have thoughts of harming yourself or others?
                         </div>
-                        <label class="item item-radio">
+                        <label class="item item-radio" ng-controller="PopupCtrlEmergency" ng-click="showAlert()">
                             <input type="radio" name="group">
                             <div class="item-content">
                                 Yes
@@ -66,6 +67,11 @@
                             <span class="input-label">Things I accomplished</span>
                             <input type="text" placeholder="I cleaned up my desk!">
                         </label>
+                    </div>
+                </div>
+                <div class="row" ng-controller="PopupCtrlSubmit" ng-click="showAlert()">
+                    <div class="col text-center">
+                        <button class="button button-royal">Submit Log</button>
                     </div>
                 </div>
             </ion-content>

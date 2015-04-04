@@ -1,29 +1,39 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
-
+        <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" src="/lib/fullcalendar/dist/fullcalendar.css">
+    <link rel="stylesheet" src="https://www.cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.1/fullcalendar.print.css">
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
-    <link href="css/ionic.app.css" rel="stylesheet">
-    -->
-
+    <link href="css/ionic.app.css" rel="stylesheet">-->
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
-
+    <script type="text/javascript" src="lib/moment/moment.js"></script>
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
-<script src="js/ng-cordova.min.js"></script>
+    <script type="text/javascript" src="js/ng-cordova.min.js"></script>
+    <script type="text/javascript" src="lib/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="lib/jquery/dist/jquery-ui.js"></script>
+    <script type="text/javascript" src="lib/angular/angular.js"></script>
+    <script type="text/javascript" src="lib/angular-ui-calendar/calendar.js"></script>
+    <script type="text/javascript" src="lib/fullcalendar/dist/fullcalendar.js"></script>
+    <script type="text/javascript" src="lib/fullcalendar/dist/gcal.js"></script>
+    <!-- <script type="text/javascript" src="lib/moment/moment.js"></script> -->
+
+
     <!-- your app's js -->
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
-  </head>
+</head>
 
-  <body ng-app="starter">
+<body ng-app="starter">
     <ion-nav-view></ion-nav-view>
-  </body>
+</body>
+
 </html>

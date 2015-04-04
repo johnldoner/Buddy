@@ -1,7 +1,40 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.controller('CalenderCtrl', function($scope) {
+    $scope.eventSources = [];
+    /* config object */
+    $scope.uiConfig = {
+        calendar: {
+            height: 450,
+            editable: true,
+            header: {
+                left: 'month basicWeek basicDay agendaWeek agendaDay',
+                center: 'title',
+                right: 'today prev,next'
+            },
+            dayClick: $scope.alertEventOnClick,
+            eventDrop: $scope.alertOnDrop,
+            eventResize: $scope.alertOnResize
+        }
+    };
+})
 
+.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+    $scope.eventSources = [];
+    $scope.uiConfig = {
+        calendar: {
+            height: 450,
+            editable: true,
+            header: {
+                left: 'month basicWeek basicDay agendaWeek agendaDay',
+                center: 'title',
+                right: 'today prev,next'
+            },
+            dayClick: $scope.alertEventOnClick,
+            eventDrop: $scope.alertOnDrop,
+            eventResize: $scope.alertOnResize
+        }
+    };
     // for moods
     $scope.moods = [{
         text: "Happy",
@@ -29,23 +62,22 @@ angular.module('starter.controllers', [])
     }];
 
     $scope.contact1 = [{
-            label: "First Name"
-        }, {
-            label: "Last Name"
-        }, {
-            label: "Phone number"
-        }, {
-            label: "Email"
-        }, {
-            info: "Nancy"
-        }, {
-            info: "Minyanou"
-        }, {
-            info: "1800-666-8888"
-        }, {
-            info: "nancy@gmail.com"
-        }
-    ];
+        label: "First Name"
+    }, {
+        label: "Last Name"
+    }, {
+        label: "Phone number"
+    }, {
+        label: "Email"
+    }, {
+        info: "Nancy"
+    }, {
+        info: "Minyanou"
+    }, {
+        info: "1800-666-8888"
+    }, {
+        info: "nancy@gmail.com"
+    }];
     // Form data for the login modal
     $scope.loginData = {};
 
@@ -78,3 +110,48 @@ angular.module('starter.controllers', [])
     };
 })
 
+.controller('PopupCtrlEmergency', function($scope, $ionicPopup, $timeout) {
+
+    // Triggered on a button click, or some other target
+    $scope.showPopup = function() {
+        $scope.data = {}
+
+
+        $timeout(function() {
+            myPopup.close(); //close the popup after 3 seconds for some reason
+        }, 3000);
+    };
+
+
+    // An alert dialog
+    $scope.showAlert = function() {
+        var alertPopup = $ionicPopup.alert({
+            title: 'Emergnecy',
+            template: 'Your Emergnecy Contacts have been alerted.'
+        });
+
+    };
+})
+
+.controller('PopupCtrlSubmit', function($scope, $ionicPopup, $timeout) {
+
+    // Triggered on a button click, or some other target
+    $scope.showPopup = function() {
+        $scope.data = {}
+
+
+        $timeout(function() {
+            myPopup.close(); //close the popup after 3 seconds for some reason
+        }, 3000);
+    };
+
+
+    // An alert dialog
+    $scope.showAlert = function() {
+        var alertPopup = $ionicPopup.alert({
+            title: 'Submission',
+            template: 'Your mood log for today have been recorded!'
+        });
+
+    };
+})
